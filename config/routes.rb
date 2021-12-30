@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get 'tweets/index'
   root to: "tweets#index"
   
+  resources :tweets
+  resources :users
 end
