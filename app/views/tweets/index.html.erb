@@ -1,20 +1,10 @@
 <div class="contents">
   <% @tweets.each do |tweet| %>
-    <p><%= tweet.text %></p>
+  <div class = "box">
     <span class="name">
       <%= tweet.user.nickname %>
     </span>
-    <ul class="more_list">
-      <li>
-        <%= link_to '詳細', "#", method: :get %>
-      </li>
-      <%# if user_signed_in? && current_user.id == tweet.user_id %>
-      <li>
-        <%= link_to '編集', "#", method: :get %>
-      </li>
-      <li>
-        <%= link_to '削除', "#", method: :delete %>
-      </li>
-    </ul>
+    <p><%= tweet.text %></p>
+  </div>
   <% end %>
 </div>
