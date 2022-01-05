@@ -116,7 +116,12 @@
 }
 
 .more_list{
-  text-decoration-line: none;
   display: block;
   font-size: 0.8em;
+}
+
+
+a{
+  text-decoration: none;
+  color: #2f4f4f;
 }
