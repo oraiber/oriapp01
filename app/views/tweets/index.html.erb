@@ -4,7 +4,7 @@
     <span class="name">
       <%= tweet.user.nickname %>
     </span>
-    <p><%= tweet.text %></p>
+    <p><%= link_to safe_join(tweet.text.split("\n"),tag(:br)), tweet_path(tweet.id) %></p>
     <% if user_signed_in? && current_user.id == tweet.user_id %>
       <p class = "more_list">
         <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
