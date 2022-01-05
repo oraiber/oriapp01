@@ -114,3 +114,9 @@
   font-size: 0.8em;
   font-family: "游ゴシック", "YuGothic";
 }
+
+.more_list{
+  text-decoration-line: none;
+  display: block;
+  font-size: 0.8em;
+}
