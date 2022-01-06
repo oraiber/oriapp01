@@ -22,8 +22,13 @@
   <ul class="comments_lists">
     <% @comments.each do |comment| %>
       <li class="comments_list">
+        <span class="name">
+          <%= comment.user.nickname %>
+        </span>
         <%= comment.content %>
-        <%= link_to comment.user.nickname, user_path(comment.user.id), class: :comment_user %>
+      </li>
+      <li class="comment_del">
+        <%=link_to "削除", tweet_comment_path(@tweet, comment), method: :delete %>
       </li>
     <% end %>
   </ul>

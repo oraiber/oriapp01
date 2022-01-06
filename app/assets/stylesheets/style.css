@@ -126,3 +126,23 @@ a{
   text-decoration: none;
   color: #2f4f4f;
 }
+
+
+.container{
+  padding-left: 20px;
+}
+
+.comments_lists{
+  padding-left: 10px;
+}
+
+.comments_list{
+  list-style-type: none;
+  padding-bottom: 5px;
+}
+
+.comment_del{
+  display: block;
+  font-size: 5px;
+  list-style-type: none;
+}
