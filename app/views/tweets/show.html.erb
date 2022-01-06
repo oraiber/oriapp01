@@ -19,17 +19,21 @@
       <%= form.submit "送信する" %>
     <% end %>
   <% end %>
-  <ul class="comments_lists">
+  <div class="comments_list">
     <% @comments.each do |comment| %>
-      <li class="comments_list">
-        <span class="name">
+      <div class = "box_com">
+        <div class="box_com_tape"> </div>
+        <p class="box_com_title">コメント</p>
+        <p class="name">
           <%= comment.user.nickname %>
-        </span>
-        <%= comment.content %>
-      </li>
-      <li class="comment_del">
-        <%=link_to "削除", tweet_comment_path(@tweet, comment), method: :delete %>
-      </li>
+        </p>
+        <p>
+          <%= comment.content %>
+        </p>
+        <p class="comment_del">
+          <%=link_to "削除", tweet_comment_path(@tweet, comment), method: :delete %>
+        </p>
+      </div>
     <% end %>
-  </ul>
+  </div>
 <div>
