@@ -142,32 +142,27 @@ a{
 }
 
 .box_com{
-  width: 260px;
-   padding: 15px;
-   margin: 2em auto;
-   background: #fbc7f5;
-   color: #000;
-   box-shadow: 4px 4px 4px rgba(0,0,0,0.03);transform:rotate(2deg);
-   word-break: break-all;
+  margin: 1em 0;
+  padding: 1em;
+  background-color: #ffffcc;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .box_com p {
-    margin: 0; 
-    padding: 0;
-    font-size: 0.9em;
+  margin: 0;
+  padding: 0;
 }
 .box_com_tape {
-    width: 50%;
-    height: 35px;
-    margin: -25px auto 0;
-    background: rgba(251, 234, 144, 0.5);/* テープの色 */
-    transform: rotate(-3deg);
-    opacity: 0.9;
+  display: block;
+  background-color: #ccb;
+  opacity: 0.2;
+  transform: rotate(3deg);
+  width: 40%;
+  height: 35px;
+  margin: -2em auto 0 auto;
+  border-left: 3px dotted rgba(0,0,0,.1);
+  border-right: 3px dotted rgba(0,0,0,.1);
 }
-.box_com_title {
-    text-align: center;
-    font-size: 1.3em!important;
-    margin-top: 10px!important;
-}
+
 .name {
     text-align: center;
     font-size: 0.7em!important;
