@@ -153,10 +153,10 @@ a{
 
 .box_com:before{
   background-color: #ef858c;	/* 吹き出し背景色 */
-  border-radius: 3px;
+  border-radius: 5px;
   color: #fff;	/* 吹き出し文字色 */
   content: 'コメント';
-  padding: 5px 20px;
+  padding: 5px 15px;
   position: absolute;
   left: -10px;
   top: -20px;
