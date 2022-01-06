@@ -29,9 +29,11 @@
         <p>
           <%= comment.content %>
         </p>
-        <p class="comment_del">
-          <%=link_to "削除", tweet_comment_path(@tweet, comment), method: :delete %>
-        </p>
+        <% if user_signed_in? && current_user.id == comment.user_id %>
+          <p class="comment_del">
+            <%=link_to "削除", tweet_comment_path(@tweet, comment), method: :delete %>
+          </p>
+        <% end %>
       </div>
     <% end %>
   </div>
