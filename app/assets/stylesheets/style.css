@@ -143,8 +143,8 @@ a{
 }
 
 .box_com{
-  background-color: #fff;	/* 背景色 */
-	border: 2px solid #f3cbd0;	/* 線の太さ・種類・色 */
+  background-color: #fff;
+	border: 2px solid #3333FF;
 	border-radius: 5px;
 	margin: 40px 5px 5px 20px;	/* 外側の余白 上・右・左・下 */
 	padding: 25px 20px 10px 20px;	/* 内側の余白 上・右・左・下 */
@@ -152,7 +152,7 @@ a{
 }
 
 .box_com:before{
-  background-color: #ef858c;	/* 吹き出し背景色 */
+  background-color: #3333FF;	/* 吹き出し背景色 */
   border-radius: 5px;
   color: #fff;	/* 吹き出し文字色 */
   content: 'コメント';
@@ -162,7 +162,7 @@ a{
   top: -20px;
 }
 .box_com:after{
-  border-top: 12px solid #ef858c;		/* 吹き出し三角部分の色 */
+  border-top: 12px solid #3333FF;		/* 吹き出し三角部分の色 */
   border-right: 12px solid transparent;
   border-left: 12px solid transparent;
   content: '';
@@ -172,6 +172,10 @@ a{
 }
 
 .name {
-  font-size: 0.7em!important;
-  margin-bottom: 1em!important;
+  font-size: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.com_con{
+  font-size: 0.8em;
 }

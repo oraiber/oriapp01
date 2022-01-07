@@ -26,8 +26,8 @@
         <p class="name">
           <%= comment.user.nickname %>さん
         </p>
-        <p>
-          <%= comment.content %>
+        <p class="com_con">
+          <%= safe_join(comment.content.split("\n"),tag(:br)) %>
         </p>
         <% if user_signed_in? && current_user.id == comment.user_id %>
           <p class="comment_del">
