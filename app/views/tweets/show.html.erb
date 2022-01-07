@@ -9,6 +9,16 @@
         <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
         <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
       </p>
+    <% else %>
+      <% if current_user.liked_by?(@tweet.id) %>
+        <%= link_to tweet_like_path(@tweet.id), method: :delete, class: "favorite_btn" do %>
+          ♥<%= @tweet.likes.count %> いいね
+        <% end %>
+      <% else %>
+        <%= link_to tweet_likes_path(@tweet.id), method: :post, class: "favorite_btn" do %>
+          ♡<%= @tweet.likes.count %> いいね
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
