@@ -25,11 +25,11 @@ belongs_to :like
 
 ## comments テーブル
 
-| column   | type       | options                        |
-| -------- | ---------- | ------------------------------ |
-| content  | string     |                                |
-| tweet_id | references | null: false, foreign_key: true |
-| user_id  | references | null: false, foreign_key: true |
+| column   | type    | options                        |
+| -------- | ------- | ------------------------------ |
+| content  | text    |                                |
+| tweet_id | integer | null: false, foreign_key: true |
+| user_id  | integer | null: false, foreign_key: true |
 
 belongs_to :user
 belongs_to :tweet

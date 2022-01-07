@@ -99,21 +99,16 @@
 }
 
 .box{
-  padding: 0.2em 0.5em;
-  margin: 2em 0;
-  background: #d6ebff;
-  box-shadow: 0px 0px 0px 10px #d6ebff;
-  border: dashed 2px white;
+  padding: 1em;
+  margin: 2em auto;
+  width:100%;
+  color: #696969;
+  background: #f0ffff;
+  border-top: solid 15px #191970;
 }
 .box p span{
   margin: 0; 
   padding: 0;
-}
-
-.name{
-  display: block;
-  font-size: 0.8em;
-  font-family: "游ゴシック", "YuGothic";
 }
 
 .more_list{
@@ -125,4 +120,62 @@
 a{
   text-decoration: none;
   color: #2f4f4f;
+}
+
+
+.container{
+  padding-left: 20px;
+}
+
+.comments_lists{
+  padding-left: 10px;
+}
+
+.comments_list{
+  list-style-type: none;
+  padding-bottom: 5px;
+}
+
+.comment_del{
+  display: block;
+  font-size: 5px;
+  list-style-type: none;
+}
+
+.box_com{
+  background-color: #fff;
+	border: 2px solid #3333FF;
+	border-radius: 5px;
+	margin: 40px 5px 5px 20px;	/* 外側の余白 上・右・左・下 */
+	padding: 25px 20px 10px 20px;	/* 内側の余白 上・右・左・下 */
+	position: relative;
+}
+
+.box_com:before{
+  background-color: #3333FF;	/* 吹き出し背景色 */
+  border-radius: 5px;
+  color: #fff;	/* 吹き出し文字色 */
+  content: 'コメント';
+  padding: 5px 15px;
+  position: absolute;
+  left: -10px;
+  top: -20px;
+}
+.box_com:after{
+  border-top: 12px solid #3333FF;		/* 吹き出し三角部分の色 */
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.name {
+  font-size: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.com_con{
+  font-size: 0.8em;
 }

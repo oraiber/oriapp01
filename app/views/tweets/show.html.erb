@@ -12,3 +12,29 @@
     <% end %>
   </div>
 </div>
+<div class="container">
+  <% if user_signed_in? %>
+    <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+      <%= form.text_area :content, placeholder: "コメントする", rows: "2" %>
+      <%= form.submit "送信する" %>
+    <% end %>
+  <% end %>
+  <div class="comments_list">
+    <% @comments.each do |comment| %>
+      <div class = "box_com">
+        <div class="box_com_tape"> </div>
+        <p class="name">
+          <%= comment.user.nickname %>さん
+        </p>
+        <p class="com_con">
+          <%= safe_join(comment.content.split("\n"),tag(:br)) %>
+        </p>
+        <% if user_signed_in? && current_user.id == comment.user_id %>
+          <p class="comment_del">
+            <%=link_to "削除", tweet_comment_path(@tweet, comment), method: :delete %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<div>
