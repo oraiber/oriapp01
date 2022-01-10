@@ -9,6 +9,18 @@
         <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
         <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
       </p>
+    <% else %>
+      <div id="like-box">
+        <% if current_user && current_user.like_for?(@tweet) %>
+          <%= link_to like_tweet_path(@tweet), method: :patch do %>
+            ♥<%= @tweet.likes.count %> いいね
+          <% end %>
+        <% elsif current_user && current_user.dele_for?(@tweet) %>
+          <%= link_to unlike_tweet_path(@tweet), method: :patch do %>
+            ♡<%= @tweet.likes.count %> いいね
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

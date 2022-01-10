@@ -21,7 +21,7 @@ has_many :likes
 
 belongs_to :user
 has_many :comments
-belongs_to :like
+has_many :likes
 
 ## comments テーブル
 
