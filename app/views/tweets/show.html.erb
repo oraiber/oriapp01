@@ -10,15 +10,13 @@
         <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
       </p>
     <% else %>
-      <% if current_user.liked_by?(@tweet.id) %>
-        <%= link_to tweet_like_path(@tweet.id), method: :delete, class: "favorite_btn" do %>
-          ♥<%= @tweet.likes.count %> いいね
+      <div id="like-box">
+        <% if current_user && current_user.like_for?(@tweet) %>
+          <%= link_to "いいね" ,like_tweet_path(@tweet), method: :patch, remote: true %>
+        <% elsif current_user && current_user.dele_for?(@tweet) %>
+          <%= link_to "いいねを解除", unlike_tweet_path(@tweet), method: :patch, remote: true %>
         <% end %>
-      <% else %>
-        <%= link_to tweet_likes_path(@tweet.id), method: :post, class: "favorite_btn" do %>
-          ♡<%= @tweet.likes.count %> いいね
-        <% end %>
-      <% end %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -41,6 +41,19 @@ class TweetsController < ApplicationController
     @comments = @tweet.comments.includes(:user)
   end
 
+  def like
+    @tweet = Tweet.find(params[:id])
+    current_user.liked_tweets << @tweet
+    redirect_to tweet_path
+
+  end
+
+  def unlike
+    @tweet = Tweet.find(params[:id])
+    current_user.liked_tweets.destroy(@tweet)
+    redirect_to tweet_path
+  end  
+
   private
   def tweet_params
     params.require(:tweet).permit(:text).merge(user_id: current_user.id)
