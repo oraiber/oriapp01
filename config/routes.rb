@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   resources :tweets do
     resources :comments, only: [:create, :destroy]
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:create, :destroy, :show]
     patch "like", "unlike", on: :member
   end
   resources :users

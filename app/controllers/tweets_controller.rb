@@ -45,7 +45,6 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     current_user.liked_tweets << @tweet
     redirect_to tweet_path
-
   end
 
   def unlike
