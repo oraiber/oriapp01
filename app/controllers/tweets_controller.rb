@@ -1,4 +1,7 @@
 class TweetsController < ApplicationController
+  before_action :set_tweet, only: [:edit, :update, :destroy, :show, :like, :unlike]
+  before_action :move_to_index, except: :index
+
   def index
     @tweets = Tweet.all
   end
@@ -17,11 +20,9 @@ class TweetsController < ApplicationController
   end
 
   def edit
-    @tweet = Tweet.find(params[:id])
   end
 
   def update
-    @tweet = Tweet.find(params[:id])
     if @tweet.update(tweet_params)
       redirect_to root_path
     else
@@ -30,26 +31,21 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    @tweet = Tweet.find(params[:id])
     @tweet.destroy
     redirect_to root_path
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
   end
 
   def like
-    @tweet = Tweet.find(params[:id])
     current_user.liked_tweets << @tweet
     redirect_to tweet_path
-
   end
 
   def unlike
-    @tweet = Tweet.find(params[:id])
     current_user.liked_tweets.destroy(@tweet)
     redirect_to tweet_path
   end  
@@ -57,5 +53,15 @@ class TweetsController < ApplicationController
   private
   def tweet_params
     params.require(:tweet).permit(:text).merge(user_id: current_user.id)
+  end
+
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end

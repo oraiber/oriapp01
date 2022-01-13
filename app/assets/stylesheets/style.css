@@ -49,6 +49,10 @@
   opacity: 0.5;
 }
 
+.header_list{
+  list-style: none;
+}
+
 
 
 .form__wrapper{
@@ -178,4 +182,19 @@ a{
 
 .com_con{
   font-size: 0.8em;
+}
+
+
+
+.mypage_list{
+  display: inline-block;
+  padding: 0 1.2em;
+  font-size: 0.8em;
+  color: #800000;
+  text-decoration: none;
+  user-select: none;
+}
+
+.mypage_list:hover{
+  opacity: 0.5;
 }

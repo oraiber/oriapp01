@@ -16,8 +16,11 @@
           <div class="nav_left"><%= link_to image_tag("logo.png", class: :logo), root_path %></div>
           <% if user_signed_in? %>
             <div class="nav_right">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "投稿する", new_tweet_path, class: :nav__btn %>
+              <ul class="header_list">
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %></li>
+                <li><%= link_to "投稿する", new_tweet_path, class: :nav__btn %></li>
+                <li><%= link_to "マイページ", user_path(current_user.id), class: :nav__btn %></li>
+              </ul>
             </div>
           <% else %>
             <div class="nav_right">
