@@ -8,13 +8,4 @@ class LikesController < ApplicationController
     @tweet = Tweet.find(params[:tweet_id])
     Like.find(params[:id]).destroy!
   end
-
-  def show
-    @nickname = current_user.nickname
-    @user = User.find(params[:id])
-    tweets = @user.tweets
-
-    like = Like.where(user_id: current_user.id).pluck(:tweet_id)
-    @like_list = Tweet.find(like)
-  end
 end

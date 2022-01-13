@@ -1,15 +1,56 @@
 <div class="mypage">
-  <p class="mypage_list"><%= link_to "#{@nickname}さんのいいね一覧へ", tweet_like_path(current_user.id), method: :get %></p>
-  <p><%= @nickname %>さんの投稿一覧</p>
-  <% @tweets.each do |tweet| %>
-    <div class = "box">
-      <p><%= link_to safe_join(tweet.text.split("\n"),tag(:br)), tweet_path(tweet.id) %></p>
-      <% if user_signed_in? && current_user.id == tweet.user_id %>
-        <p class = "more_list">
-          <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
-          <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
+  <ul class="list">
+    <li class="list-item">
+      <h3 class="list-tit"><%= @nickname %>さんの投稿一覧</h3>
+      <div class="list-content">
+        <p class="list-txt">
+          <% @tweets.each do |tweet| %>
+            <div class = "box">
+              <p><%= link_to safe_join(tweet.text.split("\n"),tag(:br)), tweet_path(tweet.id) %></p>
+              <% if user_signed_in? && current_user.id == tweet.user_id %>
+                <p class = "more_list">
+                  <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
+                  <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
+                </p>
+              <% end %>
+            </div>
+          <% end %>
         </p>
-      <% end %>
-    </div>
-  <% end %>
+      </div>
+    </li>
+    <li class="list-item">
+      <h3 class="list-tit"><%= @nickname %>さんのいいね一覧</h3>
+      <div class="list-content">
+        <p class="list-txt">
+          <% if @like_list.present? %>
+            <% @like_list.each do |tweet| %>
+            <div class = "box">
+              <%= tweet.user.nickname %>
+              <p><%= link_to safe_join(tweet.text.split("\n"),tag(:br)), tweet_path(tweet.id) %></p>
+            </div>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+    </li>
+  </ul>
 </div>
+
+<script type="text/javascript">
+  const accordions = document.querySelectorAll('.list-item');
+
+  accordions.forEach(accordion => {
+    accordion.addEventListener('click', () => {
+      const content = accordion.querySelector('.list-content');
+
+      content.classList.toggle('active');
+
+      if(content.classList.contains('active')) {
+        content.style.height = content.scrollHeight + 'px';
+      } else {
+        content.style.height = '0px';
+      }
+
+    });
+  });
+</script>
