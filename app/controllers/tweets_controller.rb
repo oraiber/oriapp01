@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:edit, :update, :destroy, :show, :like, :unlike]
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :search]
 
   def index
     @tweets = Tweet.all
@@ -49,6 +49,12 @@ class TweetsController < ApplicationController
     current_user.liked_tweets.destroy(@tweet)
     redirect_to tweet_path
   end  
+
+  def search
+    @tweets = Tweet.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
 
   private
   def tweet_params
