@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'tweets/index'
+  get 'search' => 'tweets#search'
   root to: "tweets#index"
   
   resources :tweets do
