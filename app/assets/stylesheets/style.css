@@ -5,12 +5,12 @@
 }
 
 .header_bar{
-  width: 100vh;
+  width: 90vw;
   margin: 0 auto;
 }
 
 .nav{
-  width: 100vh;
+  width: 80vw;
   display: flex;
   justify-content: space-between;
 }
@@ -65,10 +65,12 @@
 
 .field{
   margin: 10px 0;
+  text-align: center;
 }
 
 .actions{
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .form__btn{
@@ -112,6 +114,7 @@
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
+  text-align: center;
 }
 
 
