@@ -73,18 +73,37 @@
 
 .form__btn{
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 1em;
+  padding: 0.2em 1.6em;
+  font-size: 1.1em;
   color: #fff;
   text-decoration: none;
   user-select: none;
   background-color: #191970;
   border: 1px solid #191970;
+  border-radius: 5px;
   transition: 0.2s ease;
 }
 
 .form__btn:hover{
   color: #191970;
+  background-color: #fff;
+}
+
+.form__btn2{
+  display: inline-block;
+  padding: 0.3em 1em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background-color: #0000cd;
+  border: 1px solid #0000cd;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+
+.form__btn2:hover{
+  color: #0000cd;
   background-color: #fff;
 }
 
