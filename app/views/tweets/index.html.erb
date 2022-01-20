@@ -7,9 +7,6 @@
 <div class="contents">
   <% @tweets.each do |tweet| %>
   <div class = "box">
-    <span class="name">
-      <%= tweet.user.nickname %>
-    </span>
     <p><%= link_to safe_join(tweet.text.split("\n"),tag(:br)), tweet_path(tweet.id) %></p>
     <% if user_signed_in? && current_user.id == tweet.user_id %>
       <p class = "more_list">

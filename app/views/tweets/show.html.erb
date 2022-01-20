@@ -1,8 +1,5 @@
 <div class="contents">
   <div class = "box">
-    <span class="name">
-      <%= link_to "#{@tweet.user.nickname}", user_path(@tweet.user.id) %>
-    </span>
     <p><%= safe_join(@tweet.text.split("\n"),tag(:br)) %></p>
     <% if user_signed_in? && current_user.id == @tweet.user_id %>
       <p class = "more_list">
