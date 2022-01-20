@@ -25,7 +25,6 @@
           <% if @like_list.present? %>
             <% @like_list.each do |tweet| %>
             <div class = "box">
-              <%= tweet.user.nickname %>
               <p><%= link_to safe_join(tweet.text.split("\n"),tag(:br)), tweet_path(tweet.id) %></p>
             </div>
             <% end %>
